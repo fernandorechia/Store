@@ -9,7 +9,7 @@ namespace Store.Model.Manager
     internal class OrderManager
     {
         private static List<Order> orders = new List<Order>();
-
+        
 
 
         public static List<Order> GetOrders()

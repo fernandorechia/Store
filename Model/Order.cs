@@ -19,9 +19,7 @@ namespace Store.Model
         [Required] public Customer Customer;
         public int OrderId { get; private set; }
 
-        private static List<Product> OrderProducts { get; set; }
-
-
+        public static List<Product> _orderProducts = new List<Product>();
 
 
         //Methods
@@ -29,19 +27,21 @@ namespace Store.Model
         public Order(Customer Customer)
         {
             this.Customer = Customer;
-            OrderProducts = new List<Product>();
             OrderId = lastAssignedId;
             lastAssignedId++;
         }
         
-        public static List<Product>? GetOrderProducts(Order order)
-        {
-            return OrderProducts;
+        public static List<Product> GetOrderProducts(Order order) {        
+            return ListProducts._orderProducts;
         }
         public static void AddProduct(Product product)
         {
-            OrderProducts.Add(product);
+            ListProducts._orderProducts.Add(product);
         }
 
+    }
+    internal class ListProducts
+    {
+        public static List<Product> _orderProducts = new List<Product>();
     }
 }

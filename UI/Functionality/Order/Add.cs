@@ -79,7 +79,7 @@ namespace Store.UI.Functionality.Order
                     Model.Product productToEdit = products.FirstOrDefault(c => c.ProductId == idInt);
                     if (productToEdit != null)
                     {
-                        Model.Order.AddProduct(productToEdit);                        
+                        Model.Order.AddProduct(productToEdit);
                         Console.WriteLine($"Produto {productToEdit.ProductName} adicionado à venda ID {order.OrderId} para o cliente {customerToEdit.Name}");
                         Console.WriteLine("Pressione qualquer tecla para continuar");
                         Console.ReadKey();
