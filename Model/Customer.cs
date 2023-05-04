@@ -20,7 +20,7 @@ namespace Store.Model
 
         // Methods
         // Constructor
-        public Customer(string _name, string? _surname, string? _phone)
+        public Customer(string name, string? surname, string? phone)
         {
             // increment last assigned ID and assign to current instance
 
@@ -29,9 +29,9 @@ namespace Store.Model
             lastAssignedId++;
 
             
-            Name = _name;
-            Surname = _surname;
-            Phone = _phone;
+            Name = name;
+            Surname = surname;
+            Phone = phone;
         }
 
     }

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Runtime.CompilerServices;
+using Store.UI;
 
 namespace Store.Model
 {
@@ -16,24 +18,30 @@ namespace Store.Model
         //Properties
         [Required] public Customer Customer;
         public int OrderId { get; private set; }
-        public int ProductId { get; private set; } = 0;
-        public List<Product>? Products { get; private set; }
-        public string ProductDescription { get; private set; }
-        public string ProductCategory { get; private set; }
+
+        private static List<Product> OrderProducts { get; set; }
+
+
+
 
         //Methods
         //Constructor
-        public Order(int _productId, List<Product>? _productName, string _productDescription)
+        public Order(Customer Customer)
         {
-            
+            this.Customer = Customer;
+            OrderProducts = new List<Product>();
             OrderId = lastAssignedId;
             lastAssignedId++;
-
-            ProductId = _productId;
-            Products = _productName;
-            ProductDescription = _productDescription;
         }
-
+        
+        public static List<Product>? GetOrderProducts(Order order)
+        {
+            return OrderProducts;
+        }
+        public static void AddProduct(Product product)
+        {
+            OrderProducts.Add(product);
+        }
 
     }
 }

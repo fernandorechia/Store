@@ -17,15 +17,16 @@ namespace Store.Model
         public string? Description { get; private set; } = null;
 
         // Methods
-        // Constructor
-        public Category(string _name, string? _description) {
+        // Constructors
+        public Category(string name, string? description) {
             
             CategoryId = lastAssignedId;
             lastAssignedId++;
 
-            Name = _name;
-            Description = _description;
+            Name = name;
+            Description = description;
 
         }
+
     }
 }

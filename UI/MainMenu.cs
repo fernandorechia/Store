@@ -10,6 +10,7 @@ namespace Store.UI
     {
         public static void MainMenu()
         {
+            Console.WriteLine("Menu principal");
             var mainOptions = new List<string> { "Clientes", "Produtos", "Categorias", "Vendas", "Sair" };
             var menu = new Menu(mainOptions);
             int selection = menu.Display();
@@ -32,8 +33,7 @@ namespace Store.UI
                 case 4:
                     Environment.Exit(0);
                     break;
-                default:
-                    MainMenu();
+                default:                   
                     break;
             }
         }

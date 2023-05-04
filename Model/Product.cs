@@ -13,8 +13,9 @@ namespace Store.Model
         private static int lastAssignedId = 1;
         // Properties
 
-        [Required]
         public Category Category;
+
+
         public int ProductId { get; private set; }
         public string? ProductName { get; private set; }
         public string? ProductDescription { get; private set; } = string.Empty;
@@ -22,15 +23,15 @@ namespace Store.Model
 
         // Methods
         // Constructor
-        public Product(Category category, string _name, string? _description, float? _price)
+        public Product(Category? category, string name, string? description, float? price)
         {
             ProductId = lastAssignedId;
             lastAssignedId++;
 
             this.Category = category;
-            ProductName = _name;
-            ProductDescription = _description;
-            ProductPrice = _price;
+            ProductName = name;
+            ProductDescription = description;
+            ProductPrice = price;
         }
 
     }

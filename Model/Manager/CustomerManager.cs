@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Store.Model.Manager
 {
-    internal class CustomerManager
+    public class CustomerManager
     {
         // Constructor for creating the list of customers
 
@@ -39,7 +39,7 @@ namespace Store.Model.Manager
         {
             return customers;
         }
-
+       
         public static List<Customer> SearchCustomersByName(string name)
         {
             var query = from customer in customers
@@ -49,3 +49,4 @@ namespace Store.Model.Manager
         }
     }
 }
+

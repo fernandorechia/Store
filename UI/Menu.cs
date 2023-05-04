@@ -32,10 +32,12 @@ namespace Store.UI
                 string input = Console.ReadLine();
 
                 if (int.TryParse(input, out int selection) && selection >= 1 && selection <= options.Count) { 
-                
+                    
+                    Console.Clear();
                     return selection - 1;
                 }
 
+                Console.Clear();
                 Console.WriteLine("Seleção inválida. Escolha um dos números listados.");
             }
         }

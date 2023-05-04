@@ -10,15 +10,8 @@ namespace Store.Model.Manager
     {
         private static List<Category> categories = new List<Category>();
 
-        public static void PopulateDefaultCategories()
-        {
-            Category camisa = new Category("camisa", "camisa normal");
-            Category calca = new Category("calça", "calça normal");
-            Category jaqueta = new Category("jaqueta", "jaqueta normal");
-            Add(camisa);
-            Add(calca);
-            Add(jaqueta);
-        }
+        
+         
         public static void Remove(Category category)
         {
             categories.Remove(category);

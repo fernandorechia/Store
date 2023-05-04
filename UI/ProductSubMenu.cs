@@ -10,29 +10,26 @@ namespace Store.UI
     {
         public static void ProductMenu()
         {
+            Console.WriteLine("Menu Produtos");
             var productOptions = new List<string> { "Adicionar produto", "Remover produto", "Listar produtos", "Voltar" };
             var menu = new Menu(productOptions);
             int selection = menu.Display();
             Console.WriteLine($"Você selecionou a opção {selection + 1}: {productOptions[selection]}");
             if ( selection == 0 )
             {
-                Functionality.AddProduct();
+                Functionality.Product.Add.AddProduct();
             }
             else if ( selection == 1 )
             {
-                Functionality.RemoveProduct();
+                Functionality.Product.Remove.RemoveProduct();
             }
             else if ( selection == 2 )
             {
-                Functionality.ListProducts();
+                Functionality.Product.List.ListProducts();
             }
             else if ( selection == 3 ) {
                 MAINMenu.MainMenu();
-            }
-            else {
-                Console.WriteLine("Opção inválida");
-                    ProductMenu();
-            }
+            }           
         }
     }
 }

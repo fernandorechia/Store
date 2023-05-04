@@ -8,19 +8,22 @@ namespace Store.Model.Manager
 {
     internal class OrderManager
     {
-        private List<Order> orders = new List<Order>();
+        private static List<Order> orders = new List<Order>();
 
-        public List<Order> GetOrders()
+
+
+        public static List<Order> GetOrders()
         {
             return orders;
         }
-        public void Add(Order order)
+        public static void Add(Order order)
         {
             orders.Add(order);
         }
-        public void Remove(Order order)
+        public static void Remove(Order order)
         {
             orders.Remove(order);
         }
+
     }
 }
